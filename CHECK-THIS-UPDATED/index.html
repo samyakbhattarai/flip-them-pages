@@ -1,0 +1,499 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Team Stark</title>
+</head>
+
+<body>
+  <div class="flipbook">
+    <div class="hard cover-page">
+      <img src="images/FrontCover.png" alt="Tour Through Space cover" />
+    </div>
+    <div>
+      <img src="images/TOC.png" alt="Table of contents" />
+    </div>
+    <div>
+      <img src="images/Chapter1-poster.png" alt="Chapter 1 poster" />
+    </div>
+    
+    <div data-story="true">
+      <img src="images/chapter-1/img-1.png" alt="Chapter 1 - Page 1" />
+      <small>1</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-2.jpg" alt="Chapter 1 - Page 2" />
+      <small>2</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-3.png" alt="Chapter 1 - Page 3" />
+      <small>3</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-4.jpg" alt="Chapter 1 - Page 4" />
+      <small>4</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-5.png" alt="Chapter 1 - Page 5" />
+      <small>5</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-6.png" alt="Chapter 1 - Page 6" />
+      <small>6</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-7.png" alt="Chapter 1 - Page 7" />
+      <small>7</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-8.png" alt="Chapter 1 - Page 8" />
+      <small>8</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-9.png" alt="Chapter 1 - Page 9" />
+      <small>9</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-10.png" alt="Chapter 1 - Page 10" />
+      <small>10</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-11.png" alt="Chapter 1 - Page 11" />
+      <small>11</small>
+    </div>
+    <div>
+      <img src="images/Chapter2-poster.png" alt="Chapter 2 poster" />
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P1.png" alt="Chapter 2 - Page 1" />
+      <small>12</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P2.png" alt="Chapter 2 - Page 2" />
+      <small>13</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P3.png" alt="Chapter 2 - Page 3" />
+      <small>14</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P4.png" alt="Chapter 2 - Page 4" />
+      <small>15</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P5.png" alt="Chapter 2 - Page 5" />
+      <small>16</small>
+    </div>
+    <div>
+      <img src="images/Chapter3-poster.png" alt="Chapter 3 poster" />
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P1.png" alt="Chapter 3 - Page 1" />
+      <small>17</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P2.png" alt="Chapter 3 - Page 2" />
+      <small>18</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P3.png" alt="Chapter 3 - Page 3" />
+      <small>19</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P4.png" alt="Chapter 3 - Page 4" />
+      <small>20</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P5.png" alt="Chapter 3 - Page 5" />
+      <small>21</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P6.png" alt="Chapter 3 - Page 6" />
+      <small>22</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P7.png" alt="Chapter 3 - Page 7" />
+      <small>23</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P8.png" alt="Chapter 3 - Page 8" />
+      <small>24</small>
+    </div>
+    <div>
+      <img src="images/BackCover.png" alt="BackCover" />
+    </div>
+  </div>
+
+  <div class="book-controls" aria-label="Flipbook navigation">
+    <button type="button" class="nav-button" id="prev-page" aria-label="Previous page">
+      &#8592;
+    </button>
+    <p class="progress" aria-live="polite">
+      Page <span id="page-range">1 &amp; 2</span> of <span id="total-pages">1</span>
+    </p>
+    <button type="button" class="nav-button" id="next-page" aria-label="Next page">
+      &#8594;
+    </button>
+  </div>
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    const $flipbookElement = $(".flipbook");
+    const $flipbook = $flipbookElement.turn();
+    const $prevButton = $("#prev-page");
+    const $nextButton = $("#next-page");
+    const $pageRangeEl = $("#page-range");
+    const $totalPagesEl = $("#total-pages");
+
+    const pageToStoryNumber = {};
+    const storyPageNumbers = [];
+
+    $flipbookElement.children().each((index, element) => {
+      if ($(element).data("story")) {
+        const pageNumber = index + 1;
+        storyPageNumbers.push(pageNumber);
+        pageToStoryNumber[pageNumber] = storyPageNumbers.length;
+      }
+    });
+
+    const totalPages = $flipbook.turn("pages");
+    const totalStoryPages = storyPageNumbers.length;
+
+    $totalPagesEl.text(totalStoryPages || totalPages);
+
+    const getStoryPageNumber = (page) => pageToStoryNumber[page] || null;
+
+    const formatPageRange = (page) => {
+      const view = $flipbook.turn("view", page);
+      const pages = view.filter((value) => value > 0);
+      const storyPages = pages
+        .map((value) => getStoryPageNumber(value))
+        .filter((value) => value !== null);
+
+      if (storyPages.length === pages.length && storyPages.length > 0) {
+        return storyPages.length === 1
+          ? `${storyPages[0]}`
+          : `${storyPages[0]} & ${storyPages[storyPages.length - 1]}`;
+      }
+
+      if (storyPages.length > 0) {
+        return storyPages.join(" & ");
+      }
+
+      if (pages.length === 0) {
+        return "";
+      }
+
+      if (pages.length === 1) {
+        return `${pages[0]}`;
+      }
+
+      return `${pages[0]} & ${pages[pages.length - 1]}`;
+    };
+
+    const updateControls = (page) => {
+      const currentPage = Math.max(1, Math.min(totalPages, page || $flipbook.turn("page")));
+      $pageRangeEl.text(formatPageRange(currentPage));
+      $prevButton.prop("disabled", currentPage <= 1);
+      $nextButton.prop("disabled", currentPage >= totalPages);
+    };
+
+    updateControls();
+
+    $prevButton.on("click", () => {
+      $flipbook.turn("previous");
+    });
+
+    $nextButton.on("click", () => {
+      $flipbook.turn("next");
+    });
+
+    $flipbook.on("turning", (event, page) => {
+      updateControls(page);
+    });
+
+    $flipbook.on("turned", (event, page) => {
+      updateControls(page);
+    });
+
+    $(document).on("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        if (!$prevButton.prop("disabled")) {
+          event.preventDefault();
+          $flipbook.turn("previous");
+        }
+      }
+
+      if (event.key === "ArrowRight") {
+        if (!$nextButton.prop("disabled")) {
+          event.preventDefault();
+          $flipbook.turn("next");
+        }
+      }
+    });
+  </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Team Stark - A Tour Through Space</title>
+</head>
+
+<body>
+  <!-- About Button - Top Right -->
+  <a href="about.html" class="about-btn">About</a>
+
+  <!-- Space Background Elements -->
+  <div class="space-background">
+    <!-- Glowing Planets -->
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+    <div class="planet planet-4"></div>
+    <div class="planet planet-5"></div>
+    <div class="planet planet-6"></div>
+    
+    <!-- Stars -->
+    <div class="stars"></div>
+  </div>
+
+  <div class="flipbook">
+    <div class="hard cover-page">
+      <img src="images/FrontCover.png" alt="Tour Through Space cover" />
+    </div>
+    <div>
+      <img src="images/TOC.png" alt="Table of contents" />
+    </div>
+    <div>
+      <img src="images/Chapter1-poster.png" alt="Chapter 1 poster" />
+    </div>
+    
+    <div data-story="true">
+      <img src="images/chapter-1/img-1.png" alt="Chapter 1 - Page 1" />
+      <small>1</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-2.jpg" alt="Chapter 1 - Page 2" />
+      <small>2</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-3.png" alt="Chapter 1 - Page 3" />
+      <small>3</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-4.jpg" alt="Chapter 1 - Page 4" />
+      <small>4</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-5.png" alt="Chapter 1 - Page 5" />
+      <small>5</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-6.png" alt="Chapter 1 - Page 6" />
+      <small>6</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-7.png" alt="Chapter 1 - Page 7" />
+      <small>7</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-8.png" alt="Chapter 1 - Page 8" />
+      <small>8</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-9.png" alt="Chapter 1 - Page 9" />
+      <small>9</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-10.png" alt="Chapter 1 - Page 10" />
+      <small>10</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-1/img-11.png" alt="Chapter 1 - Page 11" />
+      <small>11</small>
+    </div>
+    <div>
+      <img src="images/Chapter2-poster.png" alt="Chapter 2 poster" />
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P1.png" alt="Chapter 2 - Page 1" />
+      <small>12</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P2.png" alt="Chapter 2 - Page 2" />
+      <small>13</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P3.png" alt="Chapter 2 - Page 3" />
+      <small>14</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P4.png" alt="Chapter 2 - Page 4" />
+      <small>15</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-2/C2P5.png" alt="Chapter 2 - Page 5" />
+      <small>16</small>
+    </div>
+    <div>
+      <img src="images/Chapter3-poster.png" alt="Chapter 3 poster" />
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P1.png" alt="Chapter 3 - Page 1" />
+      <small>17</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P2.png" alt="Chapter 3 - Page 2" />
+      <small>18</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P3.png" alt="Chapter 3 - Page 3" />
+      <small>19</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P4.png" alt="Chapter 3 - Page 4" />
+      <small>20</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P5.png" alt="Chapter 3 - Page 5" />
+      <small>21</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P6.png" alt="Chapter 3 - Page 6" />
+      <small>22</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P7.png" alt="Chapter 3 - Page 7" />
+      <small>23</small>
+    </div>
+    <div data-story="true">
+      <img src="images/chapter-3/C3P8.png" alt="Chapter 3 - Page 8" />
+      <small>24</small>
+    </div>
+    <div>
+      <img src="images/BackCover.png" alt="BackCover" />
+    </div>
+  </div>
+
+  <div class="book-controls" aria-label="Flipbook navigation">
+    <button type="button" class="nav-button" id="prev-page" aria-label="Previous page">
+      &#8592;
+    </button>
+    <p class="progress" aria-live="polite">
+      Page <span id="page-range">1 &amp; 2</span> of <span id="total-pages">1</span>
+    </p>
+    <button type="button" class="nav-button" id="next-page" aria-label="Next page">
+      &#8594;
+    </button>
+  </div>
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    const $flipbookElement = $(".flipbook");
+    const $flipbook = $flipbookElement.turn();
+    const $prevButton = $("#prev-page");
+    const $nextButton = $("#next-page");
+    const $pageRangeEl = $("#page-range");
+    const $totalPagesEl = $("#total-pages");
+
+    const pageToStoryNumber = {};
+    const storyPageNumbers = [];
+
+    $flipbookElement.children().each((index, element) => {
+      if ($(element).data("story")) {
+        const pageNumber = index + 1;
+        storyPageNumbers.push(pageNumber);
+        pageToStoryNumber[pageNumber] = storyPageNumbers.length;
+      }
+    });
+
+    const totalPages = $flipbook.turn("pages");
+    const totalStoryPages = storyPageNumbers.length;
+
+    $totalPagesEl.text(totalStoryPages || totalPages);
+
+    const getStoryPageNumber = (page) => pageToStoryNumber[page] || null;
+
+    const formatPageRange = (page) => {
+      const view = $flipbook.turn("view", page);
+      const pages = view.filter((value) => value > 0);
+      const storyPages = pages
+        .map((value) => getStoryPageNumber(value))
+        .filter((value) => value !== null);
+
+      if (storyPages.length === pages.length && storyPages.length > 0) {
+        return storyPages.length === 1
+          ? `${storyPages[0]}`
+          : `${storyPages[0]} & ${storyPages[storyPages.length - 1]}`;
+      }
+
+      if (storyPages.length > 0) {
+        return storyPages.join(" & ");
+      }
+
+      if (pages.length === 0) {
+        return "";
+      }
+
+      if (pages.length === 1) {
+        return `${pages[0]}`;
+      }
+
+      return `${pages[0]} & ${pages[pages.length - 1]}`;
+    };
+
+    const updateControls = (page) => {
+      const currentPage = Math.max(1, Math.min(totalPages, page || $flipbook.turn("page")));
+      $pageRangeEl.text(formatPageRange(currentPage));
+      $prevButton.prop("disabled", currentPage <= 1);
+      $nextButton.prop("disabled", currentPage >= totalPages);
+    };
+
+    updateControls();
+
+    $prevButton.on("click", () => {
+      $flipbook.turn("previous");
+    });
+
+    $nextButton.on("click", () => {
+      $flipbook.turn("next");
+    });
+
+    $flipbook.on("turning", (event, page) => {
+      updateControls(page);
+    });
+
+    $flipbook.on("turned", (event, page) => {
+      updateControls(page);
+    });
+
+    $(document).on("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        if (!$prevButton.prop("disabled")) {
+          event.preventDefault();
+          $flipbook.turn("previous");
+        }
+      }
+
+      if (event.key === "ArrowRight") {
+        if (!$nextButton.prop("disabled")) {
+          event.preventDefault();
+          $flipbook.turn("next");
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

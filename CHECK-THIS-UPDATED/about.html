@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Team Stark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: #0a0e27;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Space Background */
+    .space-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at top, rgba(88, 70, 180, 0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at bottom right, rgba(72, 180, 200, 0.1) 0%, transparent 50%),
+                  #0a0e27;
+    }
+
+    /* Glowing Planets */
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.6;
+    }
+
+    .planet-1 {
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(147, 112, 219, 0.4) 0%, rgba(147, 112, 219, 0.1) 70%, transparent 100%);
+      animation: glow-pulse 8s ease-in-out infinite;
+    }
+
+    .planet-2 {
+      top: 50px;
+      right: -50px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(72, 209, 204, 0.4) 0%, rgba(72, 209, 204, 0.1) 70%, transparent 100%);
+      animation: glow-pulse 10s ease-in-out infinite 2s;
+    }
+
+    .planet-3 {
+      bottom: -80px;
+      left: 100px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(138, 43, 226, 0.35) 0%, rgba(138, 43, 226, 0.1) 70%, transparent 100%);
+      animation: glow-pulse 12s ease-in-out infinite 4s;
+    }
+
+    .planet-4 {
+      bottom: 100px;
+      right: -80px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(65, 105, 225, 0.3) 0%, rgba(65, 105, 225, 0.1) 70%, transparent 100%);
+      animation: glow-pulse 9s ease-in-out infinite 1s;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { 
+        opacity: 0.6; 
+        filter: blur(40px); 
+      }
+      50% { 
+        opacity: 0.8; 
+        filter: blur(60px); 
+      }
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent);
+      background-size: 200% 200%;
+      opacity: 0.4;
+      animation: twinkle 4s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      padding: 12px 24px;
+      background: rgba(147, 112, 219, 0.15);
+      border: 1px solid rgba(147, 112, 219, 0.3);
+      border-radius: 12px;
+      color: #e0e7ff;
+      text-decoration: none;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: rgba(147, 112, 219, 0.25);
+      border-color: rgba(147, 112, 219, 0.5);
+      transform: translateX(-4px);
+    }
+
+    .content-card {
+      background: rgba(15, 20, 45, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(147, 112, 219, 0.2);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #9370db, #48d1cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #9370db;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(224, 231, 255, 0.9);
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      color: #9370db;
+      font-weight: 600;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(147, 112, 219, 0.3), transparent);
+      margin: 32px 0;
+    }
+
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 32px 24px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Space Background -->
+  <div class="space-background">
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+    <div class="planet planet-4"></div>
+    <div class="stars"></div>
+  </div>
+
+  <div class="container">
+    <a href="index.html" class="back-button">
+      <span>←</span>
+      Back to Book
+    </a>
+
+    <div class="content-card">
+      <h1>About Team Stark</h1>
+
+      <p>
+        Welcome to our interactive space journey! This digital flipbook takes you on an extraordinary 
+        tour through the cosmos, exploring the wonders of our universe.
+      </p>
+
+      <p>
+        Created by <span class="highlight">Team Stark</span>, this project combines 
+        stunning visuals with engaging storytelling to bring the mysteries of space to life.
+      </p>
+
+      <div class="divider"></div>
+
+      <h2>Journey Through Space</h2>
+      <p>
+        Each page reveals new celestial wonders, from distant galaxies to mysterious phenomena. 
+        Navigate through the chapters to discover the beauty and science of space exploration.
+      </p>
+
+      <p>
+        Follow the adventures of Flara and friends as they explore solar storms, aurora borealis, 
+        and the incredible teamwork between the Sun, Earth, and satellites to protect our world.
+      </p>
+
+      <div class="divider"></div>
+
+      <h2>Interactive Experience</h2>
+      <p>
+        Use the arrow buttons or your keyboard's arrow keys to flip through pages. 
+        Each chapter brings you closer to understanding the amazing phenomena that occur in space weather.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
